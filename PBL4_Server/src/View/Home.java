@@ -87,21 +87,21 @@ public class Home extends javax.swing.JFrame {
         lương = new javax.swing.JLabel();
         rdNam = new javax.swing.JRadioButton();
         rdNu = new javax.swing.JRadioButton();
-        cbbChucvu = new javax.swing.JComboBox<>();
+        cbbChucvu = new javax.swing.JComboBox<String>();
         btnAdd = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
         btnRefesh = new javax.swing.JButton();
-        jDate = new com.toedter.calendar.JDateChooser();
+        jDate = new org.netbeans.modules.form.InvalidComponent();
         panelStatusClient = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        ListStatus = new javax.swing.JList<>();
+        ListStatus = new javax.swing.JList<String>();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtSend = new javax.swing.JTextArea();
         btnSend = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        ListClient = new javax.swing.JList<>();
+        ListClient = new javax.swing.JList<String>();
         jScrollPane5 = new javax.swing.JScrollPane();
         TableClient = new javax.swing.JTable();
         panelListClients = new javax.swing.JPanel();
@@ -330,7 +330,7 @@ public class Home extends javax.swing.JFrame {
         rdNu.setText("Nữ");
         jPanelThongtinnhanvien.add(rdNu, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, -1, -1));
 
-        cbbChucvu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(BH) Bán Hàng", "(BV) Bảo Vệ", "(QL) Quản Lý" }));
+        cbbChucvu.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "(BH) Bán Hàng", "(BV) Bảo Vệ", "(QL) Quản Lý" }));
         cbbChucvu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanelThongtinnhanvien.add(cbbChucvu, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 210, 40));
 
@@ -394,7 +394,7 @@ public class Home extends javax.swing.JFrame {
         });
         jPanelThongtinnhanvien.add(btnRefesh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 720, 190, 60));
 
-        jDate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jDate.null;
         jPanelThongtinnhanvien.add(jDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 210, 40));
 
         panelData.add(jPanelThongtinnhanvien, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 370, 800));
@@ -766,7 +766,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel email;
     private javax.swing.JLabel gioitinh;
     private javax.swing.JLabel iconHome;
-    private com.toedter.calendar.JDateChooser jDate;
+    private org.netbeans.modules.form.InvalidComponent jDate;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
