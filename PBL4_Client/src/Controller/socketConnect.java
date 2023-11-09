@@ -15,7 +15,7 @@ public class socketConnect {
     
     public void connectSocket(int port){
         try{
-           socket=new Socket("192.168.26.180",port);
+           socket=new Socket("localhost",port);
             JOptionPane.showMessageDialog(null,"Ket noi thanh cong");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);

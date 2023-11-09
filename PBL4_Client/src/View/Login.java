@@ -1,12 +1,13 @@
 
 package View;
 
-import Controller.C_checkLogin;
+import ConnectSocket.CSocket;
 public class Login extends javax.swing.JFrame {
+    public CSocket soc ;
 
     public Login() {
         initComponents();
-    
+        soc = new CSocket();
     }
 
 
@@ -22,8 +23,8 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtusername = new javax.swing.JTextField();
         txtpassword = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnDangNhap = new javax.swing.JButton();
+        btnThoat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,23 +78,23 @@ public class Login extends javax.swing.JFrame {
 
         txtpassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
 
-        jButton2.setBackground(new java.awt.Color(54, 33, 89));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Đăng nhập");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnDangNhap.setBackground(new java.awt.Color(54, 33, 89));
+        btnDangNhap.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnDangNhap.setForeground(new java.awt.Color(255, 255, 255));
+        btnDangNhap.setText("Đăng nhập");
+        btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnDangNhapActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(54, 33, 89));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Thoát");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnThoat.setBackground(new java.awt.Color(54, 33, 89));
+        btnThoat.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
+        btnThoat.setText("Thoát");
+        btnThoat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnThoatActionPerformed(evt);
             }
         });
 
@@ -114,9 +115,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(txtpassword)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
-                        .addComponent(jButton2)
+                        .addComponent(btnDangNhap)
                         .addGap(46, 46, 46)
-                        .addComponent(jButton3)))
+                        .addComponent(btnThoat)))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -132,8 +133,8 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(btnDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(btnThoat, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
 
@@ -154,22 +155,23 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 //bt dang nhap:
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
         String username=txtusername.getText();
         String pass=txtpassword.getText();
-        
-        C_checkLogin obj=new C_checkLogin();
-        boolean b=obj.checkLogin(username, pass);
-        if(b){
-            MainFrame mainObj=new MainFrame();
-            mainObj.show();
-            this.hide(); 
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
+        soc.SendMess(username );
+//        C_checkLogin obj=new C_checkLogin();
+//        boolean b=obj.checkLogin(username, pass);
+//        if(b){
+//            MainFrame mainObj=new MainFrame();
+//            mainObj.show();
+//            this.hide(); 
+//        }
+    }//GEN-LAST:event_btnDangNhapActionPerformed
+
 //bt thoat:
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
         this.hide();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnThoatActionPerformed
 
     public static void main(String args[]) {
        
@@ -181,8 +183,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnDangNhap;
+    private javax.swing.JButton btnThoat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

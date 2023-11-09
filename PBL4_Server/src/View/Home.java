@@ -1,7 +1,7 @@
 
 package View;
 
-import ConnectSocket.svSocket1;
+import ConnectSocket.SVSocket;
 import Controler.DAOclient;
 import Controler.DAOnv;
 import Model.M_Client;
@@ -27,7 +27,7 @@ public class Home extends javax.swing.JFrame {
     private List<M_Client> client;
     private DefaultTableModel model;
     private int selectedIndex;
-    private svSocket1 sv;
+    public SVSocket sv;
     private DefaultListModel modelList;
     
     public Home() {
@@ -87,21 +87,21 @@ public class Home extends javax.swing.JFrame {
         lương = new javax.swing.JLabel();
         rdNam = new javax.swing.JRadioButton();
         rdNu = new javax.swing.JRadioButton();
-        cbbChucvu = new javax.swing.JComboBox<String>();
+        cbbChucvu = new javax.swing.JComboBox<>();
         btnAdd = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
         btnRefesh = new javax.swing.JButton();
-        jDate = new org.netbeans.modules.form.InvalidComponent();
+        jDate = new com.toedter.calendar.JDateChooser();
         panelStatusClient = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        ListStatus = new javax.swing.JList<String>();
+        ListStatus = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtSend = new javax.swing.JTextArea();
         btnSend = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        ListClient = new javax.swing.JList<String>();
+        ListClient = new javax.swing.JList<>();
         jScrollPane5 = new javax.swing.JScrollPane();
         TableClient = new javax.swing.JTable();
         panelListClients = new javax.swing.JPanel();
@@ -151,7 +151,7 @@ public class Home extends javax.swing.JFrame {
                 btnDATAActionPerformed(evt);
             }
         });
-        jPanel2.add(btnDATA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 330, 80));
+        jPanel2.add(btnDATA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 330, 60));
 
         txtPort.setBackground(new java.awt.Color(54, 33, 89));
         txtPort.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
@@ -172,7 +172,7 @@ public class Home extends javax.swing.JFrame {
                 btnCLIENTActionPerformed(evt);
             }
         });
-        jPanel2.add(btnCLIENT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 330, 80));
+        jPanel2.add(btnCLIENT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 330, 60));
 
         btnEditData.setBackground(new java.awt.Color(54, 33, 89));
         btnEditData.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
@@ -264,62 +264,62 @@ public class Home extends javax.swing.JFrame {
         jPanelThongtinnhanvien.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(54, 33, 89), 2, true), "Thông tin nhân viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI Semibold", 1, 18), new java.awt.Color(54, 33, 89))); // NOI18N
         jPanelThongtinnhanvien.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        mã.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        mã.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         mã.setForeground(new java.awt.Color(54, 33, 89));
         mã.setText("Mã nhân viên:");
         jPanelThongtinnhanvien.add(mã, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 50));
 
         txtMa.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         txtMa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(54, 33, 89), 1, true));
-        jPanelThongtinnhanvien.add(txtMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 210, 40));
+        jPanelThongtinnhanvien.add(txtMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 230, 30));
 
         txtTen.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         txtTen.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(54, 33, 89), 1, true));
-        jPanelThongtinnhanvien.add(txtTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 210, 40));
+        jPanelThongtinnhanvien.add(txtTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 230, 30));
 
-        ten.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        ten.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         ten.setForeground(new java.awt.Color(54, 33, 89));
         ten.setText("Họ và tên");
         jPanelThongtinnhanvien.add(ten, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 110, 50));
 
-        gioitinh.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        gioitinh.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         gioitinh.setForeground(new java.awt.Color(54, 33, 89));
         gioitinh.setText("Giới tính");
         jPanelThongtinnhanvien.add(gioitinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 110, 50));
 
-        cv.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cv.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         cv.setForeground(new java.awt.Color(54, 33, 89));
         cv.setText("Chức vụ");
         jPanelThongtinnhanvien.add(cv, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 110, 50));
 
         txtDiachi.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         txtDiachi.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(54, 33, 89), 1, true));
-        jPanelThongtinnhanvien.add(txtDiachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 210, 40));
+        jPanelThongtinnhanvien.add(txtDiachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 230, 30));
 
-        date.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        date.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         date.setForeground(new java.awt.Color(54, 33, 89));
         date.setText("Ngày sinh");
         jPanelThongtinnhanvien.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 110, 50));
 
-        diachi.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        diachi.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         diachi.setForeground(new java.awt.Color(54, 33, 89));
         diachi.setText("Địa chỉ");
         jPanelThongtinnhanvien.add(diachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 110, 50));
 
         txtLuong.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         txtLuong.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(54, 33, 89), 1, true));
-        jPanelThongtinnhanvien.add(txtLuong, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, 210, 40));
+        jPanelThongtinnhanvien.add(txtLuong, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 230, 30));
 
         txtEmail.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         txtEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(54, 33, 89), 1, true));
-        jPanelThongtinnhanvien.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 210, 40));
+        jPanelThongtinnhanvien.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 230, 30));
 
-        email.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        email.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         email.setForeground(new java.awt.Color(54, 33, 89));
         email.setText("Email");
         jPanelThongtinnhanvien.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 110, 50));
 
-        lương.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lương.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lương.setForeground(new java.awt.Color(54, 33, 89));
         lương.setText("Lương");
         jPanelThongtinnhanvien.add(lương, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 110, 50));
@@ -330,9 +330,9 @@ public class Home extends javax.swing.JFrame {
         rdNu.setText("Nữ");
         jPanelThongtinnhanvien.add(rdNu, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, -1, -1));
 
-        cbbChucvu.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "(BH) Bán Hàng", "(BV) Bảo Vệ", "(QL) Quản Lý" }));
+        cbbChucvu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(BH) Bán Hàng", "(BV) Bảo Vệ", "(QL) Quản Lý" }));
         cbbChucvu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jPanelThongtinnhanvien.add(cbbChucvu, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 210, 40));
+        jPanelThongtinnhanvien.add(cbbChucvu, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 230, 30));
 
         btnAdd.setBackground(new java.awt.Color(54, 33, 89));
         btnAdd.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
@@ -344,7 +344,7 @@ public class Home extends javax.swing.JFrame {
                 btnAddActionPerformed(evt);
             }
         });
-        jPanelThongtinnhanvien.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 190, 60));
+        jPanelThongtinnhanvien.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 180, 50));
 
         btnEdit.setBackground(new java.awt.Color(54, 33, 89));
         btnEdit.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
@@ -356,7 +356,7 @@ public class Home extends javax.swing.JFrame {
                 btnEditActionPerformed(evt);
             }
         });
-        jPanelThongtinnhanvien.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 630, 190, 60));
+        jPanelThongtinnhanvien.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 630, 180, 50));
 
         btnDel.setBackground(new java.awt.Color(54, 33, 89));
         btnDel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
@@ -368,7 +368,7 @@ public class Home extends javax.swing.JFrame {
                 btnDelActionPerformed(evt);
             }
         });
-        jPanelThongtinnhanvien.add(btnDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 700, 120, 80));
+        jPanelThongtinnhanvien.add(btnDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 720, 120, 50));
 
         btnSearch.setBackground(new java.awt.Color(54, 33, 89));
         btnSearch.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
@@ -380,7 +380,7 @@ public class Home extends javax.swing.JFrame {
                 btnSearchActionPerformed(evt);
             }
         });
-        jPanelThongtinnhanvien.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 550, 120, 80));
+        jPanelThongtinnhanvien.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 550, 120, 50));
 
         btnRefesh.setBackground(new java.awt.Color(54, 33, 89));
         btnRefesh.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
@@ -392,10 +392,8 @@ public class Home extends javax.swing.JFrame {
                 btnRefeshActionPerformed(evt);
             }
         });
-        jPanelThongtinnhanvien.add(btnRefesh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 720, 190, 60));
-
-        jDate.null;
-        jPanelThongtinnhanvien.add(jDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 210, 40));
+        jPanelThongtinnhanvien.add(btnRefesh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 720, 180, 50));
+        jPanelThongtinnhanvien.add(jDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 230, 30));
 
         panelData.add(jPanelThongtinnhanvien, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 370, 800));
 
@@ -498,7 +496,10 @@ public class Home extends javax.swing.JFrame {
             modelList.addElement("Server connecting ...");
             ListStatus.setModel(modelList);
         try {
-            sv = new svSocket1();
+            sv = new SVSocket();
+            Home homeframe = new Home();
+            sv.setHomeFrame(homeframe);
+    
             modelList.addElement("Server has successfully connected");
             ListStatus.setModel(modelList);
         } catch (Exception e) {
@@ -766,7 +767,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel email;
     private javax.swing.JLabel gioitinh;
     private javax.swing.JLabel iconHome;
-    private org.netbeans.modules.form.InvalidComponent jDate;
+    private com.toedter.calendar.JDateChooser jDate;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -818,5 +819,11 @@ public class Home extends javax.swing.JFrame {
     }
 
 
-    
+ 
+
+    public void updateListModel(String string) {
+        modelList.addElement("Server connecting ...");
+        ListStatus.setModel(modelList);
+//    ListClient.add
+    }
 }
